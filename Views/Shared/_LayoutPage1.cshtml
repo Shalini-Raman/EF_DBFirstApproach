@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Import bootstrap -->
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        <a class="navbar-brand" href="#">Company</a>
+        <div class="col-8">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-link" href="/home/index">Home</a>
+                    <a class="navbar-link" href="/categories/index">categories</a>
+                    <a class="navbar-link" href="/Brands/index">Brands</a>
+                    <a class="navbar-link" href="/Product/index">Product</a>
+                </li>
+               
+            </ul>
+        </div>
+
+        <div class="col-3 text-dark">
+            @ViewBag.Message
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+       @RenderBody()
+    </div>
+</body>
+</html>

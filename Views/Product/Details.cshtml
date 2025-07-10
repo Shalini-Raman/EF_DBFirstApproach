@@ -1,0 +1,52 @@
+﻿@model EFDBFirstApproachNew.Models.Products
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Product Details</h2>
+<table class="table">
+    <tr>
+        <th>ProductID</th>
+        <th>ProductName</th>
+        <th>Price</th>
+        <th>DateOfPurchase</th>
+        <th>AvailabilityStatus</th>
+        <th>CategoryID</th>
+        <th>BrandID</th>
+        <th>active</th>
+    </tr>
+    <tr>
+        <td>@Model.ProductID</td>
+        <td>@Model.ProductName</td>
+        <td>
+            @if (Model.Price.HasValue)
+            {
+            <span>@Model.Price.Value.ToString("C")</span>
+            }
+        </td>
+        <td>
+            @if (Model.DOP.HasValue)
+            {
+                <span>@Model.DOP.Value.ToString("dd/MM/yyyy")</span>
+            }
+        </td>
+        <td>@Model.AvailabilityStatus</td>
+        <td>
+            @if (Model.CategoryID.HasValue)
+            {
+                <span>@Model.category.CategoryName</span>
+            }
+        </td>
+        <td>
+            @if (Model.BrandID.HasValue)
+            {
+                <span>
+                    @Model.Brand.BrandName
+                </span>
+            }
+        </td>
+        <td>@Model.active</td>
+    </tr>
+</table>
+<a href="/product/Index">Index</a>
